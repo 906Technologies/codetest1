@@ -1,6 +1,8 @@
-Alright here is a sample app I wrote up really quick it requires some polish and a new armor type.
+Alright here is a sample app I wrote up really quick it requires some polish and a features.
 
-Here is a list of things I would like you to add.
+Fork this repository and make some changes to the application.
+
+Here is a list of things I would like you to do.
 
 1. New armor type for shoulders and make sure that it can be equipped to your outfit.
 
