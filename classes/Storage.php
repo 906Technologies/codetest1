@@ -28,9 +28,9 @@ class Storage{
 		$_SESSION['equipment'][] = $armor;
 	}
 	
-	public static function removeInventory($name){
+	public static function removeInventory($name,$type){
 		foreach(self::getAllInventory() as $key => $armor){
-			if($armor->getName() == $name){
+			if($armor->getName() == $name && $armor->getLabel() == $type){
 				unset($_SESSION['equipment'][$key]);
 			}
 		}
