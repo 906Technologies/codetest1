@@ -32,6 +32,10 @@ class Outfit{
 	 */
 	private $feet = null;
 	
+	/**
+	 *
+	 * @var Shoulders
+	 */	
 	private $shoulders = null;
 	
 	public function getHead() {

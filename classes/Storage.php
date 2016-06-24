@@ -28,6 +28,7 @@ class Storage{
 		$_SESSION['equipment'][] = $armor;
 	}
 	
+	/*CODETEST*/
 	public static function removeInventory($name,$type){
 		foreach(self::getAllInventory() as $key => $armor){
 			if($armor->getName() == $name && $armor->getLabel() == $type){
@@ -46,6 +47,17 @@ class Storage{
 		return null;
 	}
 	
+	/*Function that should get type from the armor inventory
+	CODETEST*/
+	public static function getInventoryType($type){
+		foreach(self::getAllInventory() as $key => $armor){
+			if($armor->getLabel() != $type) {
+				continue;
+			}
+			return $armor;
+		}
+		return null;
+	}
 	
 	
 }
