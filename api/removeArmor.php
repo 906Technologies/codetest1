@@ -10,8 +10,9 @@ if(!isset($_POST['type']))
 {die(json_encode(array('error'=>true,'message'=>'Missing Type')));}
 
 /*Check to see that armor type is in getTypeLabels
-TODO: doublecheck array search methods*/
-if(!in_array($_POST['type'],Armor::getTypeLabels()){
+NOTE:getTypeLabels returns a => array*/
+if(!in_array($_POST['type'],Armor::getTypeLabels()))
+{
 	die(json_encode(array('error'=>true,'message'=>'Type is not a valid Armor Type')));
 }
 	

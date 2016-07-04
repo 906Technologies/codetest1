@@ -47,14 +47,19 @@ class Storage{
 		return null;
 	}
 	
-	/*Function that should get type from the armor inventory
+	/*Function should check $name and $type to see if there 
+	is already armor-name and armor-type in inventory
 	CODETEST*/
-	public static function getInventoryType($type){
-		foreach(self::getAllInventory() as $key => $armor){
-			if($armor->getLabel() != $type) {
-				continue;
+	public static function checkInventory($name,$type)
+	{
+		foreach(self::getAllInventory() as $key => $armor)
+		{
+			if($armor->getName() == $name) 
+			{
+				if($armor->getLabel() == $type)
+				{return $armor;}
 			}
-			return $armor;
+			continue;
 		}
 		return null;
 	}
