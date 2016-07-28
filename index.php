@@ -20,13 +20,12 @@ require_once __DIR__.'/core.php';
 			
 			<label>Type</label>
 			<select name="type">
-				<?
-				foreach(Armor::getTypeLabels() as $id => $label){
+				<option value=""></option>
+					<?php
+					foreach(Armor::getTypeLabels() as $key => $value){
+					echo '<option value="'.$key.'">'.$value.'</option>';
+					}
 					?>
-					<option value="<?=$id?>"><?=$label?></option>
-					<?
-				}
-				?>
 			</select>
 			
 			
@@ -39,16 +38,14 @@ require_once __DIR__.'/core.php';
 		
 		<fieldset id="outfit">
 			<legend>Outfit</legend>
-			<?
-			foreach(Armor::getTypeLabels() as $id => $label){
+				<?php
+				foreach(Armor::getTypeLabels() as $key => $value){
+				echo '<label>'.$value.'</label>';
+				echo '<select class="equiped" name="'.$value.'"></select>';
+				echo '<br/>';
+				}
 				?>
-				<label><?=$label?></label>
-				<select class="equiped" name="<?=$label?>">
-				</select>
-				<br/>
-				<?
-			}
-			?>
+
 		</fieldset>
 		<style>
 			.inventory-item{
