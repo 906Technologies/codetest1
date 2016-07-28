@@ -18,6 +18,9 @@ if(isset($_POST['Legs'])){
 if(isset($_POST['Feet'])){
 	$outfit->setFeet(Storage::getInventory($_POST['Feet']));
 }
+if(isset($_POST['Shoulders'])){
+	$outfit->setFeet(Storage::getInventory($_POST['Shoulders']));
+}
 
 Storage::saveOutfit($outfit);
 

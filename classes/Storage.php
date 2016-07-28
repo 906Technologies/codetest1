@@ -28,9 +28,10 @@ class Storage{
 		$_SESSION['equipment'][] = $armor;
 	}
 	
-	public static function removeInventory($name){
+	/*CODETEST*/
+	public static function removeInventory($name,$type){
 		foreach(self::getAllInventory() as $key => $armor){
-			if($armor->getName() == $name){
+			if($armor->getName() == $name && $armor->getLabel() == $type){
 				unset($_SESSION['equipment'][$key]);
 			}
 		}
@@ -46,6 +47,22 @@ class Storage{
 		return null;
 	}
 	
+	/*Function should check $name and $type to see if there 
+	is already armor-name and armor-type in inventory
+	CODETEST*/
+	public static function checkInventory($name,$type)
+	{
+		foreach(self::getAllInventory() as $key => $armor)
+		{
+			if($armor->getName() == $name) 
+			{
+				if($armor->getLabel() == $type)
+				{return $armor;}
+			}
+			continue;
+		}
+		return null;
+	}
 	
 	
 }

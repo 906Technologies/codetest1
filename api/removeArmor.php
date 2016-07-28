@@ -5,7 +5,18 @@ if(!isset($_POST['name'])){
 	die(json_encode(array('error'=>true,'message'=>'Missing Armor Name')));
 }
 
-Storage::removeInventory($_POST['name']);
+/*CODETEST*/
+if(!isset($_POST['type']))
+{die(json_encode(array('error'=>true,'message'=>'Missing Type')));}
+
+/*Check to see that armor type is in getTypeLabels
+NOTE:getTypeLabels returns a => array*/
+if(!in_array($_POST['type'],Armor::getTypeLabels()))
+{
+	die(json_encode(array('error'=>true,'message'=>'Type is not a valid Armor Type')));
+}
+	
+Storage::removeInventory($_POST['name'],$_POST['type']);
 
 
 echo json_encode(array('error'=>false,'message'=>'Armor Removed Successfully'));
